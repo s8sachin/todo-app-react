@@ -16,7 +16,11 @@ class TodosList extends React.Component {
             <Card body>
               <Row>
                 <Col sm={11}>
-                  <CardTitle><b>{task.title}</b> <Badge style={{ fontSize: '50%' }} color={task.status === 'DONE' ? 'success' : 'warning'} pill className="">{task.status}</Badge></CardTitle>
+                  <CardTitle>
+                    <b>{task.title} </b>
+                    <Badge style={{ fontSize: '50%', marginRight: '5px' }} color="info" className="">{task.createdAt.substring(0, 10)}</Badge>
+                    <Badge style={{ fontSize: '50%' }} color={task.status === 'DONE' ? 'success' : 'warning'} pill className="">{task.status}</Badge>
+                  </CardTitle>
                   <CardText>{task.description}</CardText>
                 </Col>
                 <Col sm={1}>
